@@ -70,11 +70,13 @@ $posts = [
         ]
     ],
 ];
+         // SNACK 1
 function getPartite($partite){
     foreach ($partite as $partita) {
         echo $partita['squadra_casa'] . ' - ' . $partita['squadra_ospite'] . ' | ' . $partita['punti_casa'] . '-' . $partita['punti_ospite'] . '<br>';
     }
 }
+       //SNACK 2
 function getData(){
     if (isset($_GET['name']) && isset($_GET['email']) && isset($_GET['age'])) {
         $name = $_GET['name'];
@@ -95,7 +97,7 @@ function control($name,$email,$age){
         echo "Accesso negato";
     }    
 }
-
+          // SNACK 3
 function getPosts($posts){
     foreach($posts as $date => $postList){
         echo "Data: $date<br>";
@@ -109,6 +111,17 @@ function getPosts($posts){
     }
 }
 
+             //SNACK 4
+function getRandNum($min, $max, $nItems){
+    $newArray = [];
+    while(count($newArray)< $nItems){
+        $number = rand($min, $max);
+        if(!in_array($number, $newArray)){
+            $newArray[] = $number;
+        }
+    }
+return $newArray;
+}
 ?>
 
 <!DOCTYPE html>
@@ -143,6 +156,15 @@ function getPosts($posts){
         <h2>snack 3</h2>
         <?php
         getPosts($posts);
+        ?>
+    </section>
+    <section>
+        <h2>snack 4</h2>
+        <?php
+         $randNums = getRandNum(1,100,15);
+         foreach($randNums as $number){
+            echo "$number  ";
+         }
         ?>
     </section>
 </body>
