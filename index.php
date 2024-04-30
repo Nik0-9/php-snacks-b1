@@ -31,6 +31,45 @@ $partite = [
         "punti_ospite" => 103
     ]
 ];
+$posts = [
+
+    '10/01/2019' => [
+        [
+            'title' => 'Post 1',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 1'
+        ],
+        [
+            'title' => 'Post 2',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 2'
+        ],
+    ],
+    '10/02/2019' => [
+        [
+            'title' => 'Post 3',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 3'
+        ]
+    ],
+    '15/05/2019' => [
+        [
+            'title' => 'Post 4',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 4'
+        ],
+        [
+            'title' => 'Post 5',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 5'
+        ],
+        [
+            'title' => 'Post 6',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 6'
+        ]
+    ],
+];
 function getPartite($partite){
     foreach ($partite as $partita) {
         echo $partita['squadra_casa'] . ' - ' . $partita['squadra_ospite'] . ' | ' . $partita['punti_casa'] . '-' . $partita['punti_ospite'] . '<br>';
@@ -55,6 +94,19 @@ function control($name,$email,$age){
     } else {
         echo "Accesso negato";
     }    
+}
+
+function getPosts($posts){
+    foreach($posts as $date => $postList){
+        echo "Data: $date<br>";
+        foreach($postList as $post){
+            foreach($post as $key => $value){
+                echo "$key: $value <br>";
+            }
+            echo "<br>";
+        }
+        echo "<br>";
+    }
 }
 
 ?>
@@ -88,7 +140,10 @@ function control($name,$email,$age){
             ?>
     </section>
     <section>
-        <h2>snak 3</h2>
+        <h2>snack 3</h2>
+        <?php
+        getPosts($posts);
+        ?>
     </section>
 </body>
 
