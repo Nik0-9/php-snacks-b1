@@ -70,6 +70,7 @@ $posts = [
         ]
     ],
 ];
+
          // SNACK 1
 function getPartite($partite){
     foreach ($partite as $partita) {
@@ -122,6 +123,16 @@ function getRandNum($min, $max, $nItems){
     }
 return $newArray;
 }
+             //SNACK 5
+function print_string(){
+    $paragrafo_lungo = 'Ciao sono Nicola. Ho 28 anni. Mi piace programmare. Nel tempo libero ascolto musica.';
+    $paragrafo_corto = explode('.', $paragrafo_lungo);
+    echo "$paragrafo_lungo <br>";
+    foreach($paragrafo_corto as $parafrago){
+        echo "$parafrago <br>";
+    }
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -165,6 +176,12 @@ return $newArray;
          foreach($randNums as $number){
             echo "$number  ";
          }
+        ?>
+    </section>
+    <section>
+        <h2>snack 5</h2>
+        <?php
+        print_string();
         ?>
     </section>
 </body>
